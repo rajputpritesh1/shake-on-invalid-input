@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shake on invalid input</title>
+  <style>
+    input {
+      outline: none;
+      border: none;
+      background: rgb(0, 151, 238);
+      padding: 10px;
+      color: #fff;
+      width: 300px;
+      border-radius: 5px;
+    }
+    h1{
+      animation: shake 300ms;
+    }
+    label{
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    input:invalid {
+      animation: shake 300ms;
+      background: red;
+    }
+
+    @keyframes shake {
+      25% {
+        transform: translateX(5px);
+      }
+
+      50% {
+        transform: translateX(-5px);
+      }
+
+      75% {
+        transform: translateX(5px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1  id="head">Shake on invalid input</h1>
+  <label>Input Only smalllercase :-
+    <input type="text" pattern="[a-z]*">
+  </label>
+
+  <label>Input Only UPPERCASE :-
+    <input type="text" pattern="[A-Z]*">
+  </label>
+
+  <label>Input Only Numbers :-
+    <input type="text" pattern="[0-9]*">
+  </label>
+  <br>
+  <h1></h1>
+</body>
+
+</html>
